@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Produits{% endblock %}
+{% block content %}
+<h1>📦 Liste des produits</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prix (€)</th>
+            <th>Date de péremption</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for produit in produits %}
+        <tr>
+            <td>{{ produit.nom }}</td>
+            <td>{{ produit.prix }}</td>
+            <td>{{ produit.date_peremption }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="3">Aucun produit disponible.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<nav>
+    <ul class="pagination">
+        {% if produits.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page={{ produits.previous_page_number }}">Précédent</a></li>
+        {% endif %}
+        <li class="page-item disabled"><a class="page-link">Page {{ produits.number }} sur {{ produits.paginator.num_pages }}</a></li>
+        {% if produits.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ produits.next_page_number }}">Suivant</a></li>
+        {% endif %}
+    </ul>
+</nav>
+
+<a href="{% url 'creer_facture' %}" class="btn btn-primary mt-3">Créer une facture</a>
+{% endblock %}
