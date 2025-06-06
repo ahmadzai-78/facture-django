@@ -17,7 +17,7 @@ Une application web simple en Django permettant de :
 ## 🔧 Installation
 
 ```bash
-git clone 
+git clone https://github.com/ahmadzai-78/facture-django.git
 cd facture-django
 python -m venv env
 env\Scripts\activate  # sous Windows
