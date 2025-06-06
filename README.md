@@ -7,12 +7,6 @@ Une application web simple en Django permettant de :
 - Télécharger la facture en PDF
 - Interface claire avec Bootstrap
 
-## 🖼️ Aperçu
-
-![Liste produits](./captures/liste_produits.png)
-![Création facture](./captures/creer_facture.png)
-![PDF](./captures/pdf_facture.png)
-
 ## 🚀 Technologies utilisées
 
 - Django 5.2
